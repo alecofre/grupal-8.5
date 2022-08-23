@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nicenews</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Nice News</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/deportes">Deportes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/farandula">Farándula</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/nacional">Nacional</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/internacional">Internacional</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/politica">Política</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/noticias">Todas las Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nicenews/new">Añadir Noticia</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Buscar">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>    
+
+    <%= yield %>
+
+    <footer>
+    <p>Integrantes: Alejandro Cofré - Jimena Aliaga - Jonathan Castro - Rolando Piñones - Yolanda Araya</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<h1>Todas las Noticias</h1>
+<br>
+<br>
+    <div id="nuevas">
+        <div class="container text-center">
+            <div class="row">
+            <% @noticias.each do |noticia|%>
+                <div class="card bg-light col-12 col-lg-2 col-md-6">
+                    <%= link_to noticia_path(noticia.id) do %>
+                        <h2><%= noticia.encabezado %></h2>
+                    <% end %>
+                    <span><%= noticia.tipo %></span>
+                </div>
+            <%end%>
+            </div>
+        </div>
+    </div>
