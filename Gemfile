@@ -65,3 +65,4 @@ group :development do
 end
 
 gem "bootstrap"
+gem "pg_search", "~> 2.3"

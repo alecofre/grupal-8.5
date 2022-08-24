@@ -60,9 +60,19 @@ class NicenewsController < ApplicationController
         end
     end
 
+    def buscar
+        puts noticia_search['query_text']
+        @noticias = Noticia.search_full_text(noticia_search['query_text'])
+        puts @noticias.length()
+        # puts @noticias[0].encabezado
+    end
+
     private
     def noticia_params
         params.require(:formulario).permit(:encabezado, :cuerpo, :tipo)
+    end
+    def noticia_search
+        params.require(:busqueda).permit([:query_text])
     end
 
 end

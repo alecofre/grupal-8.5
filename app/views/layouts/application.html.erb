@@ -43,10 +43,10 @@
               <a class="nav-link" href="/nicenews/new">Añadir Noticia</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Buscar">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
+          <%= form_for :busqueda, :url =>{:action => :buscar}, method: :get  do |form| %>
+            <%= form.text_field :query_text, placeholder: 'busqueme aquí', value: params[:query_text] %>
+            <%= form.submit %>
+          <% end %>
         </div>
       </div>
     </nav>    

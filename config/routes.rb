@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'nicenews/:id', to: 'nicenews#show', as: :noticia
   get 'nicenews/edit/:id', to: 'nicenews#edit', as: :edit
   get 'nicenews/delete/:id', to: 'nicenews#delete', as: :delete
+  get 'nicenews/buscar/buscar', to: 'nicenews#buscar', as: :buscar
   
   end
   
