@@ -3,18 +3,28 @@ class NicenewsController < ApplicationController
     end
 
     def deportes 
+        @noticias = Noticia.where("tipo = ?",1)
+        puts @noticias.length
     end
 
     def farandula 
+        @noticias = Noticia.where("tipo = ?",2)
+        puts @noticias.length
     end
 
     def nacional
+        @noticias = Noticia.where("tipo = ?",3)
+        puts @noticias.length
     end
 
     def internacional
+        @noticias = Noticia.where("tipo = ?",4)
+        puts @noticias.length
     end
 
     def politica
+        @noticias = Noticia.where("tipo = ?",5)
+        puts @noticias.length
     end
 
     def noticias
