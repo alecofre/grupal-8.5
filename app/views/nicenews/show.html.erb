@@ -1,3 +1,12 @@
-<h1><%= @noticia.encabezado %></h1>
+<div class="row card col-lg-4">
+    <h1 class="card-header"><%= @noticia.encabezado %></h1>
 
-<p><%= @noticia.cuerpo %></p>
+    <p class="card-body"><%= @noticia.cuerpo %></p>
+
+    <%= link_to edit_path(@noticia.id) do %>
+        <p class="btn btn-success col-lg-3">EDITAR</p>
+    <% end %>
+    <%= link_to delete_path(@noticia.id) do %>
+        <p class="btn btn-danger  col-lg-3">BORRAR</p>
+    <% end %>
+</div>

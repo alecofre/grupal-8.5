@@ -34,6 +34,32 @@ class NicenewsController < ApplicationController
         @noticia.save
         redirect_to nicenews_noticias_path
     end
+
+    def edit
+        @noticia = Noticia.find(params[:id])
+    end
+    
+    def update
+        @noticia = Noticia.find(params[:id])
+        # @noticia.encabezado = noticia_params.encabezado
+        # @noticia.cuerpo = noticia_params.cuerpo
+        # @noticia.tipo = noticia_params.tipo
+        if @noticia.update(noticia_params)
+            redirect_to noticia_path
+        else
+            render :edit
+        end
+    end
+
+    def delete
+        @noticia = Noticia.find(params[:id])
+        if @noticia.delete
+            redirect_to nicenews_noticias_path
+        else
+            redirect_to noticia_path
+        end
+    end
+
     private
     def noticia_params
         params.require(:formulario).permit(:encabezado, :cuerpo, :tipo)
